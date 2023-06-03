@@ -1,0 +1,38 @@
+20230603
+заметки
+
+void input_matrix(int[,] matrix)
+{
+    for (int i = 0; i < matrix.GetLength(0); i++)
+        for(int j = 0; j < matrix.GetLength(1); j++)
+            matrix[i, j] = new Random().Next(-10, 11);  //[-10;10]
+}
+
+
+void print_matrix(int[,] matrix)
+{
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for(int j = 0; j < matrix.GetLength(1); j++)
+            Console.Write($"{matrix[i, j]} \t");
+        Console.WriteLine();
+    }
+}
+
+
+Console.Clear();
+Console.Write("Введите размер матрицы: ");
+int[] size = Console.ReadLine().Split(" ").Select(x => int.Parse(x)).ToArray();
+// "5 4"
+// "5", "4"
+// 5, 4
+// [5, 4]
+// size[0] - row
+// size[1] - column
+int[,] matrix = new int[size[0], size[1]];
+Console.WriteLine("Начальная матрица: ");
+input_matrix(matrix);
+print_matrix(matrix);
+
+10:15
+
